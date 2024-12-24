@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+  <remote name="Miracleprjkt"
+          fetch="https://github.com/Miracleprjkt"/>
+
+  <remote name="ryz"
+          fetch="https://github.com/kutemeikito" />
+
+  <remote name="gitlab"
+          fetch="https://gitlab.com/" />
+
+  <remote name="github"
+          fetch="https://github.com/" />
+
+  <remote name="Arrow"
+          fetch="https://github.com/ArrowOS" />
+
+  <!-- Device Tree & Vendor Tree -->
+  <project path="device/xiaomi/ginkgo" name="device_xiaomi_ginkgo" remote="Miracleprjkt" revision="Genesis-15" />
+  <project path="vendor/xiaomi/ginkgo" name="Vendor_Xiaomi_Ginkgo" remote="Miracleprjkt" revision="fourteen" />
+
+  <!-- Replace Hals Display for fix GCAM-->
+  <remove-project name="LineageOS/android_hardware_qcom_display"/>
+  <project path="hardware/qcom-caf/sm8150/display" name="ClownUI/hardware_qcom_display" groups="qcom" revision="vic-caf-sm8150" remote="github"/>
+
+  <!-- Kernel & Clang -->
+  <project path="kernel/xiaomi/ginkgo" name="android_kernel_xiaomi_ginkgo" remote="ryz" revision="fourteen/main" />
+  <project path="prebuilts/clang/host/linux-x86/clang-rastamod" name="kutemeikito/RastaMod69-Clang" remote="gitlab" revision="clang-20.0" />
+    
+  <!-- MIUI Camera -->
+  <project path="vendor/miuicamera" name="ArrowOS-Devices/android_vendor_miuicamera" remote="github" revision="arrow-12.0-a3" />
+</manifest>
